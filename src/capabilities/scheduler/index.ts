@@ -1,5 +1,5 @@
 import { Devvit } from '@devvit/public-api';
-import { wordlist } from '../../utils/wordlist.js';
+import { wordlist } from '../../api/wordlist.js';
 import { generateWordSearch } from '../../api/wordsearch.js';
 import { CreatePreview } from '../../components/Preview.js';
 
