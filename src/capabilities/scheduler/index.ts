@@ -1,6 +1,6 @@
 import { Devvit } from '@devvit/public-api';
 import { wordlist } from '../../api/wordlist.js';
-import { generateWordSearch } from '../../api/wordsearch.js';
+import { WordSearch } from '../../api/wordsearch.js';
 import { CreatePreview } from '../../components/Preview.js';
 
 Devvit.addSchedulerJob({
@@ -9,12 +9,14 @@ Devvit.addSchedulerJob({
     const { redis, reddit } = context
 
     console.log('Generating word search...')
-    var wordsearch = generateWordSearch({
-      dictionary: wordlist,
-      minLength: 3,
-      maxLength: 10,
-      width: 10,
-      height: 10
+    var wordsearch = new WordSearch({
+      make: {
+        dictionary: wordlist,
+        minLength: 3,
+        maxLength: 10,
+        width: 10,
+        height: 10
+      }
     })
 
     const date = new Date(Date.now())
